@@ -1,0 +1,62 @@
+# This file contains Eliza's substitutions.
+# It is based on the implementation here:
+#    http://www.jezuk.co.uk/cgi-bin/view/software/eliza
+# Regular expressions should follow the syntax here:
+#    https://github.com/google/re2/wiki/Syntax
+
+(?i)^i$
+you
+
+(?i)^you$
+I
+
+(?i)^were$
+was
+
+(?i)^am$
+are
+
+(?i)^are$
+am
+
+(?i)^was$
+were
+
+(?i)^were$
+was
+
+(?i)^I'?m$
+you are
+
+(?i)^you'?re$
+I am
+
+(?i)^you$
+me
+
+(?i)^my$
+your
+
+(?i)^[Mm]e$
+you
+
+(?i)^you'?ve$
+I have
+
+(?i)^you'?ll$
+I will
+
+(?i)^your$
+my
+
+(?i)^yours$
+mine
+
+(?i)^myself$
+yourself
+
+(?i)^any$
+some
+
+(?i)^some$
+any

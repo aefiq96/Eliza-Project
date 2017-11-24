@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--adapted from https://github.com/data-representation/go-ajax-->
+<!-- From: https://v4-alpha.getbootstrap.com/getting-started/introduction/ -->
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  
+    <style>
+      body{
+      background-image: url("./img/blue.jpg");
+
+      }
+      #center{
+        text-align: center;
+      }
+      #output-area{
+
+        background-color:black;
+        color:aqua;
+      }
+      #user-input{
+         background-color:black;  
+         color:aqua;  
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="center">Eliza</h2>
+    </div>
+
+    <div class="container">
+      <!-- Adapted from: https://v4-alpha.getbootstrap.com/components/forms/ -->
+      <form id="user-input-form">
+        
+
+        <div class="form-group">
+          <label for="output-area"></label>
+          <textarea class="form-control" id="output-area" rows="10" disabled></textarea>
+
+          <input type="text" class="form-control" id="user-input" aria-describedby="user-input-help" placeholder="Ask Eliza">
+        
+        </div>
+      </form>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script>
+      $("#user-input-form").submit(
+        function(event) {
+          event.preventDefault();
+          //need to enter more than 1 char
+          if((document.getElementById("user-input").value).length > 1){
+          $.get('/user-input', { value: $('#user-input').val() } )
+            .done(function (data) {
+              // $('#output-area').val(data);
+              askEliza(data);
+            })
+          }
+            //clears the user input 
+            document.getElementById("user-input").value  = "";
+        });
+
+        //this function will append all the text 
+        function askEliza(text) {
+
+          document.getElementById("output-area").value += text + "\n";
+	    	  document.getElementById("output-area").scrollTop =  document.getElementById("output-area").scrollHeight;
+
+        }
+
+    </script>
+  </body>
+</html>
