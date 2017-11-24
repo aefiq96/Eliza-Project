@@ -17,4 +17,18 @@
 6. > go build eliza.go
 7. Run the executable produced.
 8. > ./eliza.exe
-9. Visit http://127.0.0.1:8080. Type something in the text box, and click Submit.
+9. Visit http://127.0.0.1:8080 or localhost:8080. Type something in the text box, and click Submit.
+
+### About
+> - Eliza is a chatbot written in GoLang. Eliza responds back to the question asked by the user
+> - Eliza responds back by using regex 
+
+
+### Links
+1. https://github.com/data-representation/go-ajax
+2. https://github.com/data-representation/eliza
+3. https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop
+4. https://www.w3schools.com/jquery/
+5. http://www.alexedwards.net/blog/serving-static-sites-with-go
+6. https://www.w3schools.com/jquery/jquery_dom_get.asp
+7. https://www.w3schools.com/jquery/jquery_ajax_intro.asp
